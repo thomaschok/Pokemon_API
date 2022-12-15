@@ -1,3 +1,26 @@
+<<<<<<< HEAD
 div{
     background-color: #F1BF6B;
 }
+=======
+.carre{
+    position: relative;
+}
+.carre::before{
+    background-color: lightgray;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.6;
+
+}
+
+.pokemon{
+    position:relative;
+}
+>>>>>>> 022b0f69ad1936b68c1c19461ec0204d1db2a4c6
