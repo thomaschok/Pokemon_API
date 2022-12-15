@@ -1,8 +1,20 @@
-.general {
-    height: 8%;
-    border: 1px solid;
-}
 
-.gras {
+.shiny-btn{
+    color: white;
     font-weight: bold;
-}
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px;
+    background-color: #7681b9;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-left: 5px;
+
+  }
+  .shiny-btn:hover{
+      transform: scale(1.1);
+      background-position: -60px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
