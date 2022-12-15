@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div>
+<app-nav-bar></app-nav-bar>
+<form >
+  Nom du pokémon à rechercher : <input formControlName="search">
+</form>
+<!--<ng-container *ngIf="pokemons.length > 0">
+  <ng-container *ngFor="let item of pokemons">
+      <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
+  </ng-container>
+</ng-container>-->
+</div>
