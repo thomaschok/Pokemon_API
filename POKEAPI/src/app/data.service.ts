@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
-import { map, Observable } from 'rxjs';
-=======
 import { Observable, map, Subscription } from 'rxjs';
->>>>>>> 022b0f69ad1936b68c1c19461ec0204d1db2a4c6
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-<<<<<<< HEAD
-  //BASE_URL = '/api'
-  constructor( private httpClient: HttpClient ) { }
-=======
     //BASE_URL = '/api'
     constructor( private httpClient: HttpClient ) { }
->>>>>>> 022b0f69ad1936b68c1c19461ec0204d1db2a4c6
 
 
   getPokemons(): Observable<any[]> {
@@ -35,7 +26,7 @@ export class DataService {
       } )
     )
   }
-    
+
     getPokemonsbyGen1(): Observable<any[]> {
       return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/1').pipe(
         map( (tab: any[]) => {
