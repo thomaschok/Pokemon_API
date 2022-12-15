@@ -10,6 +10,8 @@ import { Gen1a3Component } from './gen1a3/gen1a3.component';
 import { Gen4a6Component } from './gen4a6/gen4a6.component';
 import { Gen7a8Component } from './gen7a8/gen7a8.component';
 import { HeaderComponent } from './header/header.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HeaderComponent } from './header/header.component';
     Gen1a3Component,
     Gen4a6Component,
     Gen7a8Component,
-    HeaderComponent
+    HeaderComponent,
+    NavBarComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
