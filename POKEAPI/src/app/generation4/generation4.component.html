@@ -1,4 +1,5 @@
-<div>
+<div class="carre">
+  <div class="pokemon">
     <app-nav-bar></app-nav-bar>
     <form>
       Nom du pokémon à rechercher : <input formControlName="search">
@@ -8,4 +9,5 @@
           <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
       </ng-container>
     </ng-container>
+  </div>
     </div>
