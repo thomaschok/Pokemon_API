@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://pokebuildapi.fr/api/v1/pokemon",
+        "target": "https://pokebuildapi.fr/api/v1",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {

@@ -13,19 +13,19 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemonsbyId(id: string): Observable<Pokemon[]> {
-    return this.http.get(this.BASE_URL + '/search.php?s=m').pipe(
-        map( (data: any) => this.objArrayPokemon(data) )
+  getPokemonsByGen1(gen: string): Observable<Pokemon[]> {
+    return this.http.get(this.BASE_URL + '/generation/3').pipe(
+      map( (data: any) => this.objArrayPokemon(data) )
     )
 }
 
 
-protected objArrayPokemon(obj: any): Pokemon[] {
-  const arr = obj['Pokemon']
+protected objArrayPokemon(tab: any[] ): Pokemon[] {
+  const arr = tab[2]
   return arr.map( (el: any) => {
       const c: Pokemon = {
-          id: el.id,
-          name: el.name,
+          id: el.id[1],
+          name: el.name[1],
       }
       return c
   })
