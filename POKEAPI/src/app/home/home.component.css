@@ -2,7 +2,7 @@
     position: relative;
 }
 .carre::before{
-    background-color: #F1BF6B;
+    background-color: lightgray;
     content: ' ';
     display: block;
     position: absolute;
@@ -10,7 +10,7 @@
     top:0;
     width: 100%;
     height: 100%;
-    background-color: #F1BF6B;
+
     opacity: 0.6;
 
 }
