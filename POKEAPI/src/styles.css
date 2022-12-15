@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://www.w3schools.com/w3css/4/w3.css";
+
+html, body {
+    height: 100%;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+div, content, header {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
