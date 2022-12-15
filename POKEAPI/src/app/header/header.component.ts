@@ -14,9 +14,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.items.push( { name: 'home', display: true })
-        this.items.push( { name: 'Gen1a3', display: true })
-        this.items.push( { name: 'Gen4a6 ', display: true })
-        this.items.push( { name: 'Gen7a8', display: false })
+        this.items.push( { name: 'generation1', display: true })
+        this.items.push( { name: 'generation2 ', display: false })
+
+        
 
         this.communicationService.onData().subscribe(
           val => console.log(val)
