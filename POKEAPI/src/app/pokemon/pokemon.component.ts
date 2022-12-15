@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 export class PokemonComponent implements OnInit {
   @Input() pokemon: any
   @Output() eventOut = new EventEmitter<string>()
-  isHidden: boolean = false;
+
 
   constructor() { }
 
