@@ -6,8 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  teamMembers = [
+    { nom: 'coco', role: 'bg1' },
+    { nom: 'toto', role: 'bg2' },
+    { nom: 'huhu', role: 'bg3' },
+    { nom: 'gogo', role: 'clodo' }
+  ];
 
-  constructor() { }
+  dateLancement = new Date(2022, 12, 15);
+
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
