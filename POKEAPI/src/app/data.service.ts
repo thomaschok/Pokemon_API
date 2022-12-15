@@ -26,7 +26,7 @@ export class DataService {
       } )
     )
   }
-    
+
     getPokemonsbyGen1(): Observable<any[]> {
       return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/1').pipe(
         map( (tab: any[]) => {

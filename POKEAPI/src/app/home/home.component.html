@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<div>
-  <app-nav-bar></app-nav-bar>
-  <form>
-    Nom du pokémon à rechercher : <input formControlName="search">
-  </form>
-  <ng-container *ngIf="pokemons.length > 0">
-    <ng-container *ngFor="let item of pokemons">
-        <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
-    </ng-container>
-  </ng-container>
-  </div>
-=======
 <div class="carre">
 <div class="pokemon">
 <app-nav-bar></app-nav-bar>
@@ -24,4 +11,3 @@
 </ng-container>
 </div>
 </div>
->>>>>>> 022b0f69ad1936b68c1c19461ec0204d1db2a4c6
