@@ -3,9 +3,13 @@
 .pokemon{
     border: 2px solid black;
     padding: 3px;
+    text-shadow: 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
+    color: #ffcb05;
 }
 
 .img{
     float: left;
     margin-left: 50%;
 }
+
+

@@ -1,20 +1,23 @@
 
 .shiny-btn{
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 5px;
-    background-color: #7681b9;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    margin-left: 5px;
+    background-image: linear-gradient(to right, #2a75bb 0%, #2a75bb  51%, #2a75bb  100%);
+margin-left: 10px;
+
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 
   }
   .shiny-btn:hover{
-      transform: scale(1.1);
-      background-position: -60px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    background-position: right center; /* change the direction of the change here */
+    color: #ffcb05;
+    text-decoration: none;
   }
+
+
+
