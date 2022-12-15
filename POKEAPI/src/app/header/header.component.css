@@ -1,8 +1,23 @@
-.general {
-    height: 8%;
-    border: 1px solid;
-}
 
-.gras {
-    font-weight: bold;
-}
+.shiny-btn{
+    background-image: linear-gradient(to right, #2a75bb 0%, #2a75bb  51%, #2a75bb  100%);
+margin-left: 10px;
+
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+
+  }
+  .shiny-btn:hover{
+
+    background-position: right center; /* change the direction of the change here */
+    color: #ffcb05;
+    text-decoration: none;
+  }
+
+
+
