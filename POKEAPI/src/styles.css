@@ -11,11 +11,16 @@ html {
 
 body {
     height: 100%;
-    padding: 10px;
+    padding: 60px;
+    font-weight: bold;
+
 }
 
-
-div, content, header {
+header{
+    padding: 5PX;
+    background-color: wheat;
+}
+div, content {
     padding: 10px;
 }
 
