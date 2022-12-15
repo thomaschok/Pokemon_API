@@ -6,6 +6,7 @@ import { Gen1a3Component } from './gen1a3/gen1a3.component';
 import { Gen4a6Component } from './gen4a6/gen4a6.component';
 import { Gen7a8Component } from './gen7a8/gen7a8.component';
 import { HomeComponent } from './home/home.component';
+import { ObservablePageComponent } from './observable-page/observable-page.component';
 
 export const routes: Routes = [
   { path: '', component: BodyComponent},
@@ -13,7 +14,8 @@ export const routes: Routes = [
   { path: 'About', component: AboutComponent},
   { path: 'Gen1a3', component: Gen1a3Component},
   { path: 'Gen4a6', component: Gen4a6Component},
-  { path: 'Gen7a8', component: Gen7a8Component}
+  { path: 'Gen7a8', component: Gen7a8Component},
+  { path: 'observable', component: ObservablePageComponent}
 ];
 
 @NgModule({
