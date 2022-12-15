@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.items.push( { name: 'About', display: true })
+
   }
 
 }
