@@ -2,7 +2,7 @@ import { DataService } from '../data.service';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
-import { map, switchMap, tap } from 'rxjs';
+import { map, switchMap} from 'rxjs';
 
 
 @Component({
@@ -38,9 +38,7 @@ export class HomeComponent implements OnInit {
             val => this.displayedPokemons = this.dataService.getCocktailFilteredByName(val)
         )*/
        this.route.paramMap.pipe(
-          tap(x=>console.log("1",x)),
           map( params => params.get('letter') ?? '' ),
-          tap(x=>console.log("2",x)),
           switchMap( letter => this.dataService.getPokemonsBegin(letter) )
       ).subscribe(
           pokemons => this.pokemons = pokemons
