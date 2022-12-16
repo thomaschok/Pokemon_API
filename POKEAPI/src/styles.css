@@ -4,7 +4,7 @@
 html {
     height: 100%;
     padding: 10px;
-    background-image: url('assets/bitee.jpg');
+    background-image: url('assets/back.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -31,6 +31,7 @@ a {
 .carre{
     position: relative;
 }
+
 .carre::before{
     background-color: lightgray;
     content: ' ';
