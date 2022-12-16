@@ -2,6 +2,18 @@
     <div class="pokemon">
 
       <button class="w3-button w3-blue" (click)="Onclick()">Générer une team aléatoire !</button>
+
+
+      <div class="pokeballs">
+          <img class ="pokeball" src="assets/pokeball.png">
+          <img class ="pokeball" src="assets/pokeball.png">
+          <img class ="pokeball" src="assets/pokeball.png">
+          <img class ="pokeball" src="assets/pokeball.png">
+          <img class ="pokeball" src="assets/pokeball.png">
+          <img class ="pokeball" src="assets/pokeball.png">
+      </div>
+
+
       <ng-container *ngIf="pokemons.length > 0">
         <ng-container *ngFor="let item of pokemons">
             <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>

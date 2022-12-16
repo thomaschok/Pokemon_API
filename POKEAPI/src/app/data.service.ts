@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable, map, Subscription } from 'rxjs';
 import { Pokemon } from './pokemon.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,15 @@ export class DataService {
         for(let i=0; i<tab.length; i++) {
           const newElement: any = {}
           newElement['name'] = tab[i].name
+          newElement['sprite'] = tab[i].sprite
           newElement['img'] = tab[i].image
-          newElement['type'] = tab[i].apiTypes[0]
+          newElement['generation'] = tab[i].apiGeneration
+          newElement['HP']=tab[i].stats.HP
+          newElement['Attack']=tab[i].stats.attack
+          newElement['spe_attack']=tab[i].stats.special_attack
+          newElement['spe_defense']=tab[i].stats.special_defense
+          newElement['Defense']=tab[i].stats.defense
+          newElement['Vitesse']=tab[i].stats.speed
           res.push(newElement)
         }
         return res;
@@ -48,6 +56,11 @@ export class DataService {
     }
 
 
+    getPokemonsBegin(letter: string): Observable<Pokemon[]> {
+      return this.getPokemons().pipe(
+          map( (pokemons: Pokemon[]) => pokemons.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(letter.toLocaleLowerCase()) === 0 ))
+      )
+}
     getPokemonsbyTeam(): Observable<any[]> {
       return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/random/team').pipe(
         map( (tab: any[]) => {

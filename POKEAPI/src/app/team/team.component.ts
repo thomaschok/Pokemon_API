@@ -9,7 +9,7 @@ import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./team.component.css']
 })
 
-export class TeamComponent implements OnInit {  
+export class TeamComponent implements OnInit {
   lastpokemon: string = ''
   pokemons: Array<any> = new Array<any>()
   displayedPokemons: Array<any> = new Array<any>()
@@ -27,7 +27,7 @@ export class TeamComponent implements OnInit {
       })
   }
 
-  ngOnInit(): void {      
+  ngOnInit(): void {
   }
 
 
@@ -37,6 +37,8 @@ export class TeamComponent implements OnInit {
 
 
   Onclick() {
+    let x:HTMLElement = document.getElementsByClassName("pokeballs")[0] as HTMLElement;
+    x.style.display="none"
     this.dataService.getPokemonsbyTeam().subscribe( x=> {this.pokemons=x})
     this.route.paramMap.subscribe(
         (params) => this.displayedPokemons = this.pokemons.filter( el => params.get('letter') ? el.name[0] === params.get('letter') : true)

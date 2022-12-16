@@ -11,6 +11,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TeamComponent } from './team/team.component';
 import { GenerationselectComponent } from './generationselect/generationselect.component';
+import { LetterpokemonComponent } from './letterpokemon/letterpokemon.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
