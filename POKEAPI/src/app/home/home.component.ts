@@ -2,8 +2,8 @@ import { DataService } from '../data.service';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
-import { map, switchMap} from 'rxjs';
-
+import { map, switchMap, tap } from 'rxjs';
+import { Pokemon } from '../pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +13,7 @@ import { map, switchMap} from 'rxjs';
 export class HomeComponent implements OnInit {
 
     lastpokemon: string = ''
+    Pokemons: Pokemon[]=[]
     pokemons: Array<any> = new Array<any>()
     displayedPokemons: Array<any> = new Array<any>()
 
@@ -30,13 +31,11 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        /*this.dataService.getPokemons().subscribe( x=> {this.pokemons=x})
-        this.route.paramMap.subscribe(
-            (params) => this.displayedPokemons = this.pokemons.filter( el => params.get('letter') ? el.name[0] === params.get('letter') : true)
-        )
-        this.searchCtrl.valueChanges.subscribe(
-            val => this.displayedPokemons = this.dataService.getCocktailFilteredByName(val)
-        )*/
+        this.searchCtrl.valueChanges.pipe(
+          switchMap( (val: string) => this.dataService.getPokemonsContains(val))
+          ).subscribe(
+              (Pokemons: Pokemon[]) => this.Pokemons = Pokemons
+      )
        this.route.paramMap.pipe(
           map( params => params.get('letter') ?? '' ),
           switchMap( letter => this.dataService.getPokemonsBegin(letter) )

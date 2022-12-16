@@ -77,6 +77,10 @@ export class DataService {
         } )
       )
     }
+    getPokemonsContains(search: string): Observable<Pokemon[]> {
+      return this.getPokemons().pipe(
+          map( (cockails: Pokemon[]) => cockails.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 ))
+      )
+  }
 
-    
 }
