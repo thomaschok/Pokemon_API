@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 
 @Component({
@@ -12,7 +13,10 @@ import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
 
 export class Generation1Component implements OnInit {
 
+  ngOptions = [0,"Eau","Feu","Plante"]
+  ngDropdown = 1;  
   lastpokemon: string = ''
+  i: number = 0
   pokemons: Array<any> = new Array<any>()
   displayedPokemons: Array<any> = new Array<any>()
 
@@ -29,7 +33,7 @@ export class Generation1Component implements OnInit {
       })
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {      
       this.dataService.getPokemonsbyGen1().subscribe( x=> {this.pokemons=x})
       this.route.paramMap.subscribe(
           (params) => this.displayedPokemons = this.pokemons.filter( el => params.get('letter') ? el.name[0] === params.get('letter') : true)
