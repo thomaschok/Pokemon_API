@@ -37,9 +37,7 @@ export class HomeComponent implements OnInit {
               (Pokemons: Pokemon[]) => this.Pokemons = Pokemons
       )
        this.route.paramMap.pipe(
-          tap(x=>console.log("1",x)),
           map( params => params.get('letter') ?? '' ),
-          tap(x=>console.log("2",x)),
           switchMap( letter => this.dataService.getPokemonsBegin(letter) )
       ).subscribe(
           pokemons => this.pokemons = pokemons
