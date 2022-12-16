@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { Pokemon } from './pokemon.service';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
+
 export class DataService {
   //BASE_URL = '/api'
   constructor( private httpClient: HttpClient ) { }
@@ -17,9 +21,8 @@ export class DataService {
         for(let i=0; i<tab.length; i++) {
           const newElement: any = {}
           newElement['name'] = tab[i].name
-          newElement['type'] = tab[i].apiTypes
           newElement['img'] = tab[i].image
-          newElement['generation'] = tab[i].apiGeneration
+          newElement['type'] = tab[i].apiTypes[0]
           res.push(newElement)
         }
         return res;
@@ -27,8 +30,8 @@ export class DataService {
     )
   }
 
-    getPokemonsbyGen1(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/1').pipe(
+    getPokemonsbyGen(id:string): Observable<any[]> {
+      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/'+id).pipe(
         map( (tab: any[]) => {
           const res = []
           for(let i=0; i<tab.length; i++) {
@@ -44,133 +47,6 @@ export class DataService {
       )
     }
 
-    getPokemonsbyGen2(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/2').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-    getPokemonsbyGen3(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/3').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-
-    getPokemonsbyGen4(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/4').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-
-    getPokemonsbyGen5(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/5').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-
-
-    getPokemonsbyGen6(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/6').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-
-
-    getPokemonsbyGen7(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/7').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
-
-
-
-
-    getPokemonsbyGen8(): Observable<any[]> {
-      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/pokemon/generation/8').pipe(
-        map( (tab: any[]) => {
-          const res = []
-          for(let i=0; i<tab.length; i++) {
-            const newElement: any = {}
-            newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
-            newElement['img'] = tab[i].image
-            newElement['generation'] = tab[i].apiGeneration
-            res.push(newElement)
-          }
-          return res;
-        } )
-      )
-    }
 
     getPokemonsbyTeam(): Observable<any[]> {
       return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/random/team').pipe(
@@ -189,5 +65,5 @@ export class DataService {
       )
     }
 
-
+    
 }

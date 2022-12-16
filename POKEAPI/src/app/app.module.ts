@@ -9,15 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
-import { Generation1Component } from './generation1/generation1.component';
-import { Generation2Component } from './generation2/generation2.component';
-import { Generation3Component } from './generation3/generation3.component';
-import { Generation4Component } from './generation4/generation4.component';
-import { Generation5Component } from './generation5/generation5.component';
-import { Generation6Component } from './generation6/generation6.component';
-import { Generation7Component } from './generation7/generation7.component';
-import { Generation8Component } from './generation8/generation8.component';
 import { TeamComponent } from './team/team.component';
+import { GenerationselectComponent } from './generationselect/generationselect.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +21,8 @@ import { TeamComponent } from './team/team.component';
     HeaderComponent,
     NavBarComponent,
     PokemonComponent,
-    Generation1Component,
-    Generation2Component,
-    Generation3Component,
-    Generation4Component,
-    Generation5Component,
-    Generation6Component,
-    Generation7Component,
-    Generation8Component,
-    TeamComponent
+    TeamComponent,
+    GenerationselectComponent,
   ],
   imports: [
     HttpClientModule,

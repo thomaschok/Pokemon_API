@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { map, pipe, switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-generation8',
-  templateUrl: './generation8.component.html',
-  styleUrls: ['./generation8.component.css']
+  selector: 'app-generationselect',
+  templateUrl: './generationselect.component.html',
+  styleUrls: ['./generationselect.component.css']
 })
-export class Generation8Component implements OnInit {
 
+
+export class GenerationselectComponent implements OnInit {  
   lastpokemon: string = ''
+
   pokemons: Array<any> = new Array<any>()
   displayedPokemons: Array<any> = new Array<any>()
 
   searchForm: UntypedFormGroup
   searchCtrl: FormControl<string>
 
-  constructor(
+  constructor(  
       private route: ActivatedRoute,
       private dataService: DataService
   ) {
@@ -27,14 +31,13 @@ export class Generation8Component implements OnInit {
       })
   }
 
-  ngOnInit(): void {
-      this.dataService.getPokemonsbyGen8().subscribe( x=> {this.pokemons=x})
-      this.route.paramMap.subscribe(
-          (params) => this.displayedPokemons = this.pokemons.filter( el => params.get('letter') ? el.name[0] === params.get('letter') : true)
+  ngOnInit(): void {      
+      this.route.paramMap.pipe(
+       map((param:ParamMap)=>param.get("id")??"1"),
+       switchMap((id:string)=>this.dataService.getPokemonsbyGen(id)) 
+      ).subscribe(
+          (pokemons) => this.pokemons=pokemons
       )
-      /*this.searchCtrl.valueChanges.subscribe(
-          val => this.displayedPokemons = this.dataService.getCocktailFilteredByName(val)
-      )*/
   }
 
   onEvent = (event: any) => {

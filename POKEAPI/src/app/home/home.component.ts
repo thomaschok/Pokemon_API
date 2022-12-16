@@ -32,9 +32,6 @@ export class HomeComponent implements OnInit {
         this.route.paramMap.subscribe(
             (params) => this.displayedPokemons = this.pokemons.filter( el => params.get('letter') ? el.name[0] === params.get('letter') : true)
         )
-        /*this.searchCtrl.valueChanges.subscribe(
-            val => this.displayedPokemons = this.dataService.getCocktailFilteredByName(val)
-        )*/
     }
 
     onEvent = (event: any) => {
