@@ -17,6 +17,7 @@ import { Generation5Component } from './generation5/generation5.component';
 import { Generation6Component } from './generation6/generation6.component';
 import { Generation7Component } from './generation7/generation7.component';
 import { Generation8Component } from './generation8/generation8.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Generation8Component } from './generation8/generation8.component';
     Generation5Component,
     Generation6Component,
     Generation7Component,
-    Generation8Component
+    Generation8Component,
+    TeamComponent
   ],
   imports: [
     HttpClientModule,

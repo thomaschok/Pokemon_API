@@ -13,9 +13,11 @@ import { Generation6Component } from './generation6/generation6.component';
 import { Generation7Component } from './generation7/generation7.component';
 import { Generation8Component } from './generation8/generation8.component';
 import { ObservablePageComponent } from './observable-page/observable-page.component';
+import { TeamComponent } from './team/team.component';
 
 export const routes: Routes = [
   { path: '', component: BodyComponent},
+  {path: 'team', component: TeamComponent},
   { path: 'Home', component: HomeComponent},
   { path: 'About', component: AboutComponent},
   {path: 'pokemon', component: PokemonComponent},

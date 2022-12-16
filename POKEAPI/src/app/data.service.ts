@@ -172,15 +172,22 @@ export class DataService {
       )
     }
 
-    /*getCocktailsWithAlcool() {
-        return this.cocktails.filter( el => el.alcohol )
+    getPokemonsbyTeam(): Observable<any[]> {
+      return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/random/team').pipe(
+        map( (tab: any[]) => {
+          const res = []
+          for(let i=0; i<6; i++) {
+            const newElement: any = {}
+            newElement['name'] = tab[i].name
+            newElement['type'] = tab[i].apiTypes
+            newElement['img'] = tab[i].image
+            newElement['generation'] = tab[i].apiGeneration
+            res.push(newElement)
+          }
+          return res;
+        } )
+      )
     }
-    getCocktailsWithoutAlcool() {
-        return this.cocktails.filter( el => !el.alcohol )
-    }*/
 
-    /*getPokemonFiltereddByName(search: string) {
-        return this.pokemons.filter( el => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 )
-    }*/
 
 }
