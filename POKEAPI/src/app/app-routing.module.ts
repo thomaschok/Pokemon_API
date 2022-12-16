@@ -16,11 +16,11 @@ import { ObservablePageComponent } from './observable-page/observable-page.compo
 import { TeamComponent } from './team/team.component';
 
 export const routes: Routes = [
-  { path: '', component: BodyComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/home'},
   { path: 'home/:letter', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   {path: 'team', component: TeamComponent},
-  { path: 'Home', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'About', component: AboutComponent},
   {path: 'pokemon', component: PokemonComponent},
   { path: 'generation1', component: Generation1Component},
