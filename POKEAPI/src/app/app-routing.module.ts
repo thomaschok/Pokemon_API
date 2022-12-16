@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { GenerationselectComponent } from './generationselect/generationselect.component';
@@ -9,10 +8,11 @@ import { ObservablePageComponent } from './observable-page/observable-page.compo
 import { TeamComponent } from './team/team.component';
 
 export const routes: Routes = [
-  { path: '', component: BodyComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/home'},
   {path: 'generation/:id',component: GenerationselectComponent},
   {path: 'team', component: TeamComponent},
-  { path: 'home', component: HomeComponent},
+  {path: 'Home', component: HomeComponent},
+  { path: 'home/:letter', component: HomeComponent},
   { path: 'About', component: AboutComponent},
   {path: 'pokemon', component: PokemonComponent},
   { path: 'observable', component: ObservablePageComponent},
