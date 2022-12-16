@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, Subscription } from 'rxjs';
+import { Pokemon } from './pokemon.service';
 
 @Injectable({
   providedIn: 'root'
@@ -172,15 +173,9 @@ export class DataService {
       )
     }
 
-    /*getCocktailsWithAlcool() {
-        return this.cocktails.filter( el => el.alcohol )
-    }
-    getCocktailsWithoutAlcool() {
-        return this.cocktails.filter( el => !el.alcohol )
-    }*/
-
-    /*getPokemonFiltereddByName(search: string) {
-        return this.pokemons.filter( el => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 )
-    }*/
-
+    getPokemonsBegin(letter: string): Observable<Pokemon[]> {
+      return this.getPokemons().pipe(
+          map( (pokemons: Pokemon[]) => pokemons.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(letter.toLocaleLowerCase()) === 0 ))
+      )
+}
 }

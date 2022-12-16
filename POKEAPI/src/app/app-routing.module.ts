@@ -16,8 +16,8 @@ import { ObservablePageComponent } from './observable-page/observable-page.compo
 
 export const routes: Routes = [
   { path: '', component: BodyComponent},
-  { path: 'Home', component: HomeComponent},
-  { path: 'About', component: AboutComponent},
+  { path: 'home/:letter', component: HomeComponent},
+  { path: 'about', component: AboutComponent},
   {path: 'pokemon', component: PokemonComponent},
   { path: 'generation1', component: Generation1Component},
   { path: 'generation2', component: Generation2Component},
@@ -27,7 +27,8 @@ export const routes: Routes = [
   { path: 'generation6', component: Generation6Component},
   { path: 'generation7', component: Generation7Component},
   { path: 'generation8', component: Generation8Component},
-  { path: 'observable', component: ObservablePageComponent}
+  { path: 'observable', component: ObservablePageComponent},
+
 ];
 
 @NgModule({

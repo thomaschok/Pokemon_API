@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +11,7 @@ export class NavBarComponent implements OnInit {
 
   letters = new Array<string>()
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit(): void {
         for(let i=0; i<26; i++) {
