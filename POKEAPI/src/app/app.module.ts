@@ -19,6 +19,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
     AppComponent,
     BodyComponent,
     HomeComponent,
+    PokemonListComponent,
+    LetterpokemonComponent,
     AboutComponent,
     HeaderComponent,
     NavBarComponent,
