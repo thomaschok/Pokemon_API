@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
 import { Observable, map, Subscription } from 'rxjs';
 import { Pokemon } from './pokemon.service';
-=======
-import { map, Observable } from 'rxjs';
->>>>>>> 6d0b6e39b95b357477b8aeef08ca525b052759f4
+
 
 @Injectable({
   providedIn: 'root'

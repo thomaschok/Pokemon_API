@@ -17,13 +17,10 @@ import { Generation5Component } from './generation5/generation5.component';
 import { Generation6Component } from './generation6/generation6.component';
 import { Generation7Component } from './generation7/generation7.component';
 import { Generation8Component } from './generation8/generation8.component';
-<<<<<<< HEAD
+
 import { LetterpokemonComponent } from './letterpokemon/letterpokemon.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-=======
 import { TeamComponent } from './team/team.component';
->>>>>>> 6d0b6e39b95b357477b8aeef08ca525b052759f4
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +38,10 @@ import { TeamComponent } from './team/team.component';
     Generation6Component,
     Generation7Component,
     Generation8Component,
-<<<<<<< HEAD
     LetterpokemonComponent,
-    PokemonListComponent
-=======
+    PokemonListComponent,
     TeamComponent
->>>>>>> 6d0b6e39b95b357477b8aeef08ca525b052759f4
+
   ],
   imports: [
     HttpClientModule,
