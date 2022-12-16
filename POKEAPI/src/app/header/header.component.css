@@ -1,23 +1,13 @@
 
 .shiny-btn{
-    background-image: linear-gradient(to right, #2a75bb 0%, #2a75bb  51%, #2a75bb  100%);
-margin-left: 10px;
-
-    padding: 10px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: black;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-
-  }
-  .shiny-btn:hover{
-
-    background-position: right center; /* change the direction of the change here */
+    text-shadow: 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
     color: #ffcb05;
-    text-decoration: none;
+    padding: 1%;
+
   }
 
+  .shiny-btn:hover{
+    text-shadow: 0 3px 6px black, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
 
 
+  }
