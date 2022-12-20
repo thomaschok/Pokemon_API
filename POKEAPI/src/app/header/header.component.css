@@ -9,5 +9,7 @@
   .shiny-btn:hover{
     text-shadow: 0 3px 6px black, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
 
-
   }
+header{
+  width:100%
+}

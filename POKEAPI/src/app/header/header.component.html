@@ -1,5 +1,5 @@
-<header class="w3-cell-row general">
-    <div class="w3-cell w3-cell-middle">
+<header>
+    <div>
         <span class="shiny-btn"><a routerLink="/Home" routerLinkActive="gras">Accueil</a></span>
         <ng-container *ngFor="let id of ids ">
         <span class="shiny-btn"> <a [routerLink]="['/generation', id]"> Génération {{id}} </a></span>

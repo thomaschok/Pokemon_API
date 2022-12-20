@@ -1,15 +1,40 @@
+ul{list-style-type: none;margin:auto;}
 
+li{
+        clear:both;
+        display: grid;
+        margin-bottom: 10px;
+        }
 
 .pokemon{
     border: 2px solid black;
-    padding: 3px;
     text-shadow: 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
     color: #ffcb05;
 }
 
-.img{
+.image{
     float: left;
-    margin-left: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100%;
+    width: 47%;
+}
+
+img{
+    width: 50%;
+    height: 100%;
+}
+
+div .description{
+    width:100%;
+}
+.description p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nompoke{
+    text-decoration: underline;
 }
 
 
