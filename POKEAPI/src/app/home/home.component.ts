@@ -32,10 +32,14 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.dataService.getPokemons().subscribe(
+            (data:any[]) => {console.log(data); this;this.pokemons = data}
+        )
+
         this.searchCtrl.valueChanges.pipe(
-          switchMap( (val: string) => this.dataService.getPokemonsContains(val))
+          switchMap( (val: string) => this.dataService.getPokemonsContains(val,""))
           ).subscribe(
-              (Pokemons: Pokemon[]) => this.Pokemons = Pokemons
+              (pokemons: Pokemon[]) => this.pokemons = pokemons
       )
       this.dataService.getPokemons().subscribe(
         pokemons => this.pokemons = pokemons
@@ -43,7 +47,7 @@ export class HomeComponent implements OnInit {
       this.com.onData().pipe(
           switchMap( letter => this.dataService.getPokemonsBegin(letter,"") )
       ).subscribe(
-          pokemons => this.pokemons = pokemons
+          (pokemons : Pokemon[]) => this.pokemons = pokemons
       )
 
     }

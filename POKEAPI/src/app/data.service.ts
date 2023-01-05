@@ -91,9 +91,9 @@ export class DataService {
         } )
       )
     }
-    getPokemonsContains(search: string): Observable<Pokemon[]> {
+    getPokemonsContains(search: string, generation: string): Observable<any[]> {
       return this.getPokemons().pipe(
-          map( (cockails: Pokemon[]) => cockails.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 ))
+          map( (pokemouille: Pokemon[]) => pokemouille.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 && (generation===""?true:el.generation==generation )))
       )
   }
 

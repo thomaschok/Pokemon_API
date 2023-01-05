@@ -4,6 +4,7 @@
 
 html {
   font-size: 18px;
+  background-color: white;
 }
 
 
@@ -15,11 +16,13 @@ h1 {
   margin-bottom: .5em;
 }
 
+
 .container {
-  width: 80%;
+
   display: block;
-  margin: 100px auto;
+  margin: 10px auto;
   text-align: center;
+
 }
 
 .pokeball {
@@ -123,18 +126,4 @@ h1 {
 
 
 }
-h2 {
-  text-indent: -9999em;
-  background-image: url(https://assets.codepen.io/13471/poke-logo.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 50vw;
-  height: 60vh;
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  transform: translate(-50%,-50%);
-  mix-blend-mode: multiply;
-  opacity: 0.5;
-}
+

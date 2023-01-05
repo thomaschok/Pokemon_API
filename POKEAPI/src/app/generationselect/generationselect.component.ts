@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
-import { map, pipe, switchMap, tap } from 'rxjs';
+import { map, switchMap, tap} from 'rxjs';
+import { Pokemon } from '../pokemon.service';
 import { CommunicationService } from '../communication.service';
+
 
 @Component({
   selector: 'app-generationselect',
@@ -16,6 +18,7 @@ export class GenerationselectComponent implements OnInit {
   lastpokemon: string = ''
   generationId: string = ''
   pokemons: Array<any> = new Array<any>()
+  Pokemons: Pokemon[]=[]
   displayedPokemons: Array<any> = new Array<any>()
 
   searchForm: UntypedFormGroup
@@ -40,11 +43,19 @@ export class GenerationselectComponent implements OnInit {
       ).subscribe(
           (pokemons) => this.pokemons=pokemons
       )
-      this.com.onData().pipe(
-        switchMap( letter => this.dataService.getPokemonsBegin(letter,this.generationId) )
-    ).subscribe(
-        pokemons => this.pokemons = pokemons
+
+
+      this.dataService.getPokemons().subscribe(
+        (data:any[]) => {console.log(data); this.pokemons = data}
     )
+
+    this.searchCtrl.valueChanges.pipe(
+        switchMap( (val: string) => this.dataService.getPokemonsContains(val,this.generationId))
+        ).subscribe(
+            (pokemons: Pokemon[]) => this.pokemons = pokemons
+    )
+
+
   }
 
   onEvent = (event: any) => {

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -9,10 +8,13 @@ export class PokemonComponent implements OnInit {
   @Input() pokemon: any
   @Output() eventOut = new EventEmitter<string>()
 
-
+hideMe=true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.hideMe=! this.hideMe
+  }
 }

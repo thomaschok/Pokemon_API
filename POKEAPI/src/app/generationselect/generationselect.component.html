@@ -1,7 +1,7 @@
 <div class="carre">
     <div class="pokemon">
       <app-nav-bar></app-nav-bar>
-      <form>
+      <form [formGroup]="searchForm">
         Nom du pokémon à rechercher : <input formControlName="search">
       </form>
       <ng-container *ngIf="pokemons.length > 0">
