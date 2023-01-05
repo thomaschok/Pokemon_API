@@ -1,1 +1,14 @@
+img{
+  width: 40px;
+  height: 40px;
+}
+
+.shiny-btn{
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb, 0 0 2px #2a75bb;
+  color: #ffcb05;
+  padding: 6px;
+}
 

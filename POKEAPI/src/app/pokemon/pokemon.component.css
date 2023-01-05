@@ -21,6 +21,7 @@
 }
 
 .container{
+  background: linear-gradient(45deg, black 30%, red);
   position: relative;
   min-height: 90vh;
   display: grid;

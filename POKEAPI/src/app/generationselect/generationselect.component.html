@@ -1,8 +1,9 @@
 <div class="carre">
     <div class="pokemon">
       <app-nav-bar></app-nav-bar>
-      <form [formGroup]="searchForm">
-        Nom du pokémon à rechercher : <input formControlName="search">
+      <form class="shiny-btn" [formGroup]="searchForm">
+        Nom du pokémon à rechercher : <input formControlName="search" placeholder="Pokemon a chercher..">
+        <img class ="pokeball" src="assets/pokeball.png">
       </form>
       <ng-container *ngIf="pokemons.length > 0">
         <ng-container *ngFor="let item of pokemons">
