@@ -3,5 +3,5 @@
   <ng-container *ngFor="let letter of letters">
       <a class="shiny-btn" (click)="onClick(letter)">{{ letter }}</a>&nbsp;
   </ng-container>
-  <button>Afficher tous les pokémon</button>
+  <button (click)="displayPokemon()">Afficher tous les pokémon</button>
 </div>
