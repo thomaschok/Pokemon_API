@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, Subscription } from 'rxjs';
+import { Observable, map, Subscription, tap } from 'rxjs';
 import { Pokemon } from './pokemon.service';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { GenerationselectComponent } from './generationselect/generationselect.component';
 
 
 @Injectable({
@@ -62,11 +64,11 @@ export class DataService {
     }
 
 
-    getPokemonsBegin(letter: string): Observable<Pokemon[]> {
+    getPokemonsBegin(letter: string, generation: string): Observable<any[]> {
       return this.getPokemons().pipe(
-          map( (pokemons: Pokemon[]) => pokemons.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(letter.toLocaleLowerCase()) === 0 ))
-      )
-}
+          map( (pokemons: Pokemon[]) => pokemons.filter( (el: Pokemon) => el.name.toLocaleLowerCase().indexOf(letter.toLocaleLowerCase()) === 0 && (generation===""?true:el.generation==generation )))
+      )}
+
     getPokemonsbyTeam(): Observable<any[]> {
       return this.httpClient.get<any[]>('https://pokebuildapi.fr/api/v1/random/team').pipe(
         map( (tab: any[]) => {

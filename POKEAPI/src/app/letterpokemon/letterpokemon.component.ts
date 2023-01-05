@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs';
+import { ActivatedRoute} from '@angular/router';
+import { map, switchMap,tap } from 'rxjs';
 import { Pokemon } from '../pokemon.service';
 import { DataService } from '../data.service';
-
-
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-letterpokemon',
@@ -15,16 +14,10 @@ export class LetterpokemonComponent implements OnInit {
 
   pokemons: Pokemon[] = []
   constructor(private activatedRoute: ActivatedRoute,
-    private dataService: DataService)
+    private dataService: DataService, private com:CommunicationService)
     { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.pipe(
-      map( params => params.get('letter') ?? '' ),
-      switchMap( letter => this.dataService.getPokemonsBegin(letter) )
-  ).subscribe(
-      pokemons => this.pokemons = pokemons
-  )
   }
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommunicationService } from '../communication.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class NavBarComponent implements OnInit {
 
   letters = new Array<string>()
 
-    constructor(private router: Router) { }
+    constructor(private router: Router,private com:CommunicationService) { }
 
     ngOnInit(): void {
         for(let i=0; i<26; i++) {
@@ -19,5 +20,7 @@ export class NavBarComponent implements OnInit {
         }
     }
 
-
+    onClick(letter: string): void {
+      this.com.pushData(letter)
+    }
 }

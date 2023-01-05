@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
-import { NgIf } from '@angular/common';
-import { map, pipe, switchMap } from 'rxjs';
+import { map, pipe, switchMap, tap } from 'rxjs';
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-generationselect',
@@ -12,18 +12,19 @@ import { map, pipe, switchMap } from 'rxjs';
 })
 
 
-export class GenerationselectComponent implements OnInit {  
+export class GenerationselectComponent implements OnInit {
   lastpokemon: string = ''
-
+  generationId: string = ''
   pokemons: Array<any> = new Array<any>()
   displayedPokemons: Array<any> = new Array<any>()
 
   searchForm: UntypedFormGroup
   searchCtrl: FormControl<string>
 
-  constructor(  
+  constructor(
       private route: ActivatedRoute,
-      private dataService: DataService
+      private dataService: DataService,
+      private com:CommunicationService
   ) {
       this.searchCtrl = new FormControl('', { validators: [Validators.required], nonNullable: true })
       this.searchForm = new UntypedFormGroup({
@@ -31,13 +32,19 @@ export class GenerationselectComponent implements OnInit {
       })
   }
 
-  ngOnInit(): void {      
+  ngOnInit(): void {
       this.route.paramMap.pipe(
        map((param:ParamMap)=>param.get("id")??"1"),
-       switchMap((id:string)=>this.dataService.getPokemonsbyGen(id)) 
+       tap( id => this.generationId = id),
+       switchMap((id:string)=>this.dataService.getPokemonsbyGen(id))
       ).subscribe(
           (pokemons) => this.pokemons=pokemons
       )
+      this.com.onData().pipe(
+        switchMap( letter => this.dataService.getPokemonsBegin(letter,this.generationId) )
+    ).subscribe(
+        pokemons => this.pokemons = pokemons
+    )
   }
 
   onEvent = (event: any) => {

@@ -13,7 +13,6 @@ export const routes: Routes = [
   {path: 'generation/:id',component: GenerationselectComponent},
   {path: 'team', component: TeamComponent},
   {path: 'Home', component: HomeComponent},
-  { path: 'home/:letter', component: HomeComponent},
   { path: 'About', component: AboutComponent},
   {path: 'pokemon', component: PokemonComponent},
   { path: 'observable', component: ObservablePageComponent},

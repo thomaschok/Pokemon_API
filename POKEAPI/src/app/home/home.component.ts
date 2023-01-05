@@ -1,10 +1,10 @@
 import { DataService } from '../data.service';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntypedFormGroup, FormControl, Validators } from '@angular/forms';
 import { map, switchMap, tap } from 'rxjs';
 import { Pokemon } from '../pokemon.service';
-
+import { CommunicationService } from '../communication.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private com: CommunicationService,
         private dataService: DataService
     ) {
         this.searchCtrl = new FormControl('', { validators: [Validators.required], nonNullable: true })
@@ -36,15 +37,18 @@ export class HomeComponent implements OnInit {
           ).subscribe(
               (Pokemons: Pokemon[]) => this.Pokemons = Pokemons
       )
-       this.route.paramMap.pipe(
-          map( params => params.get('letter') ?? '' ),
-          switchMap( letter => this.dataService.getPokemonsBegin(letter) )
+      this.dataService.getPokemons().subscribe(
+        pokemons => this.pokemons = pokemons
+    )
+      this.com.onData().pipe(
+          switchMap( letter => this.dataService.getPokemonsBegin(letter,"") )
       ).subscribe(
           pokemons => this.pokemons = pokemons
       )
+
     }
 
     onEvent = (event: any) => {
         this.lastpokemon = event
     }
-}
+  }
