@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: inconsolata;
+
 }
 
 
@@ -29,14 +30,17 @@
       /1em minmax(340px,18vw) 1em 1fr
   ;
   align-content: center;
+
 }
 
 .sidebar{
+  margin-top: 5px;
   width: 100%;
   height: 5vh;
   z-index: 2;
   box-shadow: 0 0 5px 1px hsl(0, 0%, 20%);
-}.s1{
+}
+.s1{
   z-index: 1;
   top: 0px;
   background: linear-gradient(45deg,
@@ -48,22 +52,7 @@
   hsl(0, 100%, 40%) 100%
   );
   border-bottom: hsl(0, 0%, 20%) solid 5px;
-}.s2{
-  z-index: 3;
-  bottom: 0px;
-  background: linear-gradient(45deg,
-  hsl(0, 100%, 40%) 0%,
-  hsl(0, 100%, 45%) 55%,
-  hsl(0, 0%, 100%) 55%,
-  hsl(0, 0%, 100%) 56%,
-  hsl(0, 0%, 20%) 56%,
-  hsl(0, 0%, 10%) 100%
-  );
-  border-top: hsl(0, 0%, 20%) solid 5px;
 }
-
-
-
 
 
 .interface{
@@ -110,8 +99,12 @@
   width: 400px;
   height: 400px;
   margin-left: 600px;
+  background-image: url('/assets/pokeball.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #infoText{
   color: white;
 }
+

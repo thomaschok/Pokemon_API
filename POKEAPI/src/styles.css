@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://www.w3schools.com/w3css/4/w3.css";
 
+html {
+  height: 100%;
+  padding: 10px;
+  background-image: url('assets/back.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 
 body {
@@ -39,6 +46,9 @@ a {
     opacity: 0.8;
 
 }
+
+
+
 
 .pokemon{
     position:relative;
