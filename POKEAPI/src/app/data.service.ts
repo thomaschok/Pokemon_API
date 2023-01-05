@@ -45,9 +45,15 @@ export class DataService {
           for(let i=0; i<tab.length; i++) {
             const newElement: any = {}
             newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
+            newElement['sprite'] = tab[i].sprite
             newElement['img'] = tab[i].image
             newElement['generation'] = tab[i].apiGeneration
+            newElement['HP']=tab[i].stats.HP
+            newElement['Attack']=tab[i].stats.attack
+            newElement['spe_attack']=tab[i].stats.special_attack
+            newElement['spe_defense']=tab[i].stats.special_defense
+            newElement['Defense']=tab[i].stats.defense
+            newElement['Vitesse']=tab[i].stats.speed
             res.push(newElement)
           }
           return res;
@@ -68,9 +74,15 @@ export class DataService {
           for(let i=0; i<6; i++) {
             const newElement: any = {}
             newElement['name'] = tab[i].name
-            newElement['type'] = tab[i].apiTypes
+            newElement['sprite'] = tab[i].sprite
             newElement['img'] = tab[i].image
             newElement['generation'] = tab[i].apiGeneration
+            newElement['HP']=tab[i].stats.HP
+            newElement['Attack']=tab[i].stats.attack
+            newElement['spe_attack']=tab[i].stats.special_attack
+            newElement['spe_defense']=tab[i].stats.special_defense
+            newElement['Defense']=tab[i].stats.defense
+            newElement['Vitesse']=tab[i].stats.speed
             res.push(newElement)
           }
           return res;
