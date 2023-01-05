@@ -23,4 +23,8 @@ export class NavBarComponent implements OnInit {
     onClick(letter: string): void {
       this.com.pushData(letter)
     }
+    displayPokemon(): void{
+
+      this.com.pushData("")
+    }
 }
