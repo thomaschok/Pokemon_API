@@ -2,12 +2,14 @@
 @import "https://www.w3schools.com/w3css/4/w3.css";
 
 html {
-    height: 100%;
-    padding: 10px;
-    background-image: url('assets/back.jpg');
-    background-size: cover;
-    background-position: center;
+  height: 100%;
+  padding: 10px;
+  background-image: url('assets/back.jpg');
+  background-size: cover;
+  background-position: center;
+
 }
+
 
 body {
     height: 100%;
