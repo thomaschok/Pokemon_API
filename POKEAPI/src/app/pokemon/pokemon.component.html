@@ -4,12 +4,14 @@
     <div class="container">
 
 
-        <div id="interface" class="interface">
+        <div [hidden]="hideMe">
+          <div class="interface">
 
             <div class="about lightBlue">
                 <h1>Voici <span id="name">{{pokemon.name}}</span></h1>
                 <img class="pixel" [src]="pokemon.sprite"/>
             </div>
+
             <p id="infoText">
               Génération:<span>{{ pokemon.generation }}</span><br>
               PV:        <span>{{ pokemon.HP}}</span><br>
@@ -19,6 +21,6 @@
               DEFENSE SPE:  <span>{{ pokemon.spe_defense}}</span><br>
               VITESSE: <span>{{ pokemon.Vitesse }}</span><br>
           </p>
-          </div>
-          <img class="image" [src]="pokemon.img"/>
+         </div></div>
+          <img class="image" [src]="pokemon.img" (click)="onClick()"/>
     </div>
