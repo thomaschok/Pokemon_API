@@ -44,16 +44,17 @@ export class GenerationselectComponent implements OnInit {
           (pokemons) => this.pokemons=pokemons
       )
 
-
-      this.dataService.getPokemons().subscribe(
-        (data:any[]) => {console.log(data); this.pokemons = data}
-    )
-
     this.searchCtrl.valueChanges.pipe(
         switchMap( (val: string) => this.dataService.getPokemonsContains(val,this.generationId))
         ).subscribe(
             (pokemons: Pokemon[]) => this.pokemons = pokemons
     )
+    this.com.onData().pipe(
+      switchMap( letter => this.dataService.getPokemonsBegin(letter,this.generationId) )
+  ).subscribe(
+      (pokemons : Pokemon[]) => this.pokemons = pokemons
+  )
+
 
 
   }
