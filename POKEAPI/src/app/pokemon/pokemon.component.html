@@ -1,15 +1,20 @@
-<div>
-  <div class="pokemon">
-      <img [src]="pokemon.img" width="100px"/>
-      <img [src]="pokemon.sprite" width="100px">
-      {{ pokemon.name | uppercase }}
-      génération = {{ pokemon.generation }}
-      PV = {{ pokemon.HP}}
-      ATTAQUE = {{ pokemon.Attack}}
-      ATTAQUE SPE = {{ pokemon.spe_attack}}
-      DEFENSE = {{ pokemon.Defense }}
-      DEFENSE SPE = {{ pokemon.spe_defense}}
-      VITESSE = {{ pokemon.Vitesse }}
-     <!-- <button class="w3-button w3-blue" (click)="onClick()">Sélectionner ce pokemon</button> -->
-  </div>
-</div>
+<ul>
+  <li>
+    <div class="pokemon">
+        <div class="image">
+          <img [src]="pokemon.img"/>
+          <img [src]="pokemon.sprite"/>
+        </div>
+        <div class="description">
+          <p class="nompoke">{{ pokemon.name | uppercase }}</p>
+          <p>génération = {{ pokemon.generation }}</p>
+          <p>PV = {{ pokemon.HP}}</p>
+          <p>ATTAQUE = {{ pokemon.Attack}}</p>
+          <p>ATTAQUE SPE = {{ pokemon.spe_attack}}</p>
+          <p>DEFENSE = {{ pokemon.Defense }}</p>
+          <p>DEFENSE SPE = {{ pokemon.spe_defense}}</p>
+          <p>VITESSE = {{ pokemon.Vitesse }}</p>
+        </div>
+            <!-- <button class="w3-button w3-blue" (click)="onClick()">Sélectionner ce pokemon</button> -->
+  </div></li>
+</ul>
