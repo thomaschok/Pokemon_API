@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
     searchForm: UntypedFormGroup
     searchCtrl: FormControl<string>
-
+    
     constructor(
         private route: ActivatedRoute,
         private dataService: DataService
@@ -31,16 +31,22 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.dataService.getPokemons().subscribe(
+            (data:any[]) => {console.log(data); this;this.pokemons = data}
+        )
+        
         this.searchCtrl.valueChanges.pipe(
-          switchMap( (val: string) => this.dataService.getPokemonsContains(val))
+          switchMap( (val: string) => this.dataService.getPokemonsContains(val,""))
           ).subscribe(
-              (Pokemons: Pokemon[]) => this.Pokemons = Pokemons
+              (pokemons: Pokemon[]) => this.pokemons = pokemons
       )
+
+
        this.route.paramMap.pipe(
           map( params => params.get('letter') ?? '' ),
           switchMap( letter => this.dataService.getPokemonsBegin(letter) )
       ).subscribe(
-          pokemons => this.pokemons = pokemons
+          (pokemons : Pokemon[]) => this.pokemons = pokemons
       )
     }
 
