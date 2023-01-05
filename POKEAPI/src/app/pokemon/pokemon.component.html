@@ -1,20 +1,25 @@
-<ul>
-  <li>
-    <div class="pokemon">
-        <div class="image">
-          <img [src]="pokemon.img"/>
-          <img [src]="pokemon.sprite"/>
-        </div>
-        <div class="description">
-          <p class="nompoke">{{ pokemon.name | uppercase }}</p>
-          <p>génération = {{ pokemon.generation }}</p>
-          <p>PV = {{ pokemon.HP}}</p>
-          <p>ATTAQUE = {{ pokemon.Attack}}</p>
-          <p>ATTAQUE SPE = {{ pokemon.spe_attack}}</p>
-          <p>DEFENSE = {{ pokemon.Defense }}</p>
-          <p>DEFENSE SPE = {{ pokemon.spe_defense}}</p>
-          <p>VITESSE = {{ pokemon.Vitesse }}</p>
-        </div>
-            <!-- <button class="w3-button w3-blue" (click)="onClick()">Sélectionner ce pokemon</button> -->
-  </div></li>
-</ul>
+
+  <div class="sidebar s1"></div>
+
+    <div class="container">
+
+
+        <div id="interface" class="interface">
+
+            <div class="about lightBlue">
+                <h1>Voici <span id="name">{{pokemon.name}}</span></h1>
+                <img class="pixel" [src]="pokemon.sprite"/>
+
+            </div>
+            <p id="infoText">
+              Génération:<span>{{ pokemon.generation }}</span><br>
+              PV:        <span>{{ pokemon.HP}}</span><br>
+              ATTAQUE:       <span>{{ pokemon.Attack}}</span><br>
+              ATTAQUE SPE:       <span>{{ pokemon.spe_attack}}</span><br>
+              DEFENSE:      <span> {{ pokemon.Defense }}</span><br>
+              DEFENSE SPE:  <span>{{ pokemon.spe_defense}}</span><br>
+              VITESSE: <span>{{ pokemon.Vitesse }}</span><br>
+          </p>
+          </div>
+          <img class="image" [src]="pokemon.img"/>
+    </div>

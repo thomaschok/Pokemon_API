@@ -14,6 +14,7 @@ import { TeamComponent } from './team/team.component';
 import { GenerationselectComponent } from './generationselect/generationselect.component';
 import { LetterpokemonComponent } from './letterpokemon/letterpokemon.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { LancementComponent } from './lancement/lancement.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
     PokemonComponent,
     TeamComponent,
     GenerationselectComponent,
+    LancementComponent,
   ],
   imports: [
     HttpClientModule,
