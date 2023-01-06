@@ -1,14 +1,14 @@
 <div class="carre">
-    <div class="pokemon">
-      <app-nav-bar></app-nav-bar>
-      <form class="shiny-btn" [formGroup]="searchForm">
-        Nom du pokémon à rechercher : <input formControlName="search" placeholder="Pokemon a chercher..">
-        <img class ="pokeball" src="assets/pokeball.png">
-      </form>
-      <ng-container *ngIf="pokemons.length > 0">
-        <ng-container *ngFor="let item of pokemons">
-            <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
-        </ng-container>
+  <div class="pokemon">
+    <app-nav-bar></app-nav-bar>
+    <form class="shiny-btn" [formGroup]="searchForm">
+      Nom du pokémon à rechercher : <input formControlName="search" placeholder="Pokemon a chercher..">
+      <img class ="pokeball" src="assets/pokeball.png">
+    </form>
+    <ng-container *ngIf="pokemons.length > 0">
+      <ng-container *ngFor="let item of pokemons">
+        <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
       </ng-container>
-      </div>
-    </div>
+    </ng-container>
+  </div>
+</div>

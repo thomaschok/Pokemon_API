@@ -1,26 +1,21 @@
-
-  <div class="sidebar s1"></div>
-
-    <div class="container">
-
-
-        <div [hidden]="hideMe">
-          <div class="interface">
-
-            <div class="about lightBlue">
-                <h1> <span id="name">{{pokemon.name}}</span></h1>
-                <img class="pixel" [src]="pokemon.sprite"/>
-            </div>
-
-            <p id="infoText">
-              Génération:<span>{{ pokemon.generation }}</span><br>
-              PV:        <span>{{ pokemon.HP}}</span><br>
-              ATTAQUE:       <span>{{ pokemon.Attack}}</span><br>
-              ATTAQUE SPE:       <span>{{ pokemon.spe_attack}}</span><br>
-              DEFENSE:      <span> {{ pokemon.Defense }}</span><br>
-              DEFENSE SPE:  <span>{{ pokemon.spe_defense}}</span><br>
-              VITESSE: <span>{{ pokemon.Vitesse }}</span><br>
-          </p>
-         </div></div>
-          <img class="image" [src]="pokemon.img" (click)="onClick()"/>
+<div class="sidebar s1"></div>
+<div class="container">
+  <div [hidden]="hideMe">
+    <div class="interface">
+      <div class="about lightBlue">
+        <h1> <span id="name">{{pokemon.name}}</span></h1>
+        <img class="pixel" [src]="pokemon.sprite"/>
+      </div>
+      <p id="infoText">
+        Génération:<span>{{ pokemon.generation }}</span><br>
+        PV:        <span>{{ pokemon.HP}}</span><br>
+        ATTAQUE:       <span>{{ pokemon.Attack}}</span><br>
+        ATTAQUE SPE:       <span>{{ pokemon.spe_attack}}</span><br>
+        DEFENSE:      <span> {{ pokemon.Defense }}</span><br>
+        DEFENSE SPE:  <span>{{ pokemon.spe_defense}}</span><br>
+        VITESSE: <span>{{ pokemon.Vitesse }}</span><br>
+      </p>
     </div>
+  </div>
+  <img class="image" [src]="pokemon.img" (click)="onClick()"/>
+</div>

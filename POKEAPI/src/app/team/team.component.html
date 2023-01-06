@@ -1,23 +1,18 @@
 <div class="carre">
-    <div class="pokemon">
-
-      <button (click)="Onclick()">Générer une team aléatoire !</button>
-
-
-      <div class="pokeballs">
-          <img class ="pokeball" src="assets/pokeball.png">
-          <img class ="pokeball" src="assets/pokeball.png">
-          <img class ="pokeball" src="assets/pokeball.png">
-          <img class ="pokeball" src="assets/pokeball.png">
-          <img class ="pokeball" src="assets/pokeball.png">
-          <img class ="pokeball" src="assets/pokeball.png">
-      </div>
-
-
-      <ng-container *ngIf="pokemons.length > 0">
-        <ng-container *ngFor="let item of pokemons">
-            <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
-        </ng-container>
-      </ng-container>
-      </div>
+  <div class="pokemon">
+    <button (click)="Onclick()">Générer une team aléatoire !</button>
+    <div class="pokeballs">
+      <img class ="pokeball" src="assets/pokeball.png">
+      <img class ="pokeball" src="assets/pokeball.png">
+      <img class ="pokeball" src="assets/pokeball.png">
+      <img class ="pokeball" src="assets/pokeball.png">
+      <img class ="pokeball" src="assets/pokeball.png">
+      <img class ="pokeball" src="assets/pokeball.png">
     </div>
+    <ng-container *ngIf="pokemons.length > 0">
+      <ng-container *ngFor="let item of pokemons">
+          <app-pokemon [pokemon]="item" (eventOut)="onEvent($event)"></app-pokemon>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

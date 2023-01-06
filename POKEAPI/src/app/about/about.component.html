@@ -1,21 +1,21 @@
 <div class="carre">
-    <div class="about">
-
-        <h1>À propos</h1>
-        <p>Salut à vous les Pokémanias ! Bienvenue sur LE site dédier à l'univers Pokémon, Vous retrouverez ici tous vos pokémons préférés.</p>
-        <h2>Présentation équipe</h2>
-        <ul>
-            <li *ngFor="let membre of teamMembers">
-                {{ membre.nom }} - {{ membre.role }}
-            </li>
-        </ul>
-        <div>
-          Site utilisant l'API Pokebuild: <a href="https://pokebuildapi.fr/api/v1">cliquez-ici</a>
-          <br>
-          Utilisation: cliquez sur les icônes de pokémon pour afficher leurs statistiques, pour affiner vos recherche utilisez les outils à votre disposition (barre de recherche, lettres, etc...)
-        </div>
-
-        <h2>Date de lancement</h2>
-        <p>15 Décembre 2022</p>
+  <div class="about">
+    <div class="propo">
+      <h1><img class ="pokeball" src="assets/pokeball.png">À propos<img class ="pokeball" src="assets/pokeball.png"></h1>
     </div>
+    <p>Salut à vous les Pokémanias ! Bienvenue sur LE site dédier à l'univers Pokémon, Vous retrouverez ici tous vos pokémons préférés.</p>
+    <h2>Présentation équipe</h2>
+    <ul>
+      <li *ngFor="let membre of teamMembers">
+        {{ membre.nom }} - {{ membre.role }}
+      </li>
+    </ul>
+    <div>
+      Site utilisant l'API Pokebuild: <a class="hyperlien" href="https://pokebuildapi.fr/api/v1">cliquez-ici</a>
+      <br>
+        Utilisation: cliquez sur les icônes de pokémon pour afficher leurs statistiques, pour affiner vos recherche utilisez les outils à votre disposition (barre de recherche, lettres, etc...)
+    </div>
+      <h2>Date de lancement</h2>
+      <p>15 Décembre 2022</p>
+  </div>
 </div>
