@@ -15,7 +15,7 @@ import { GenerationselectComponent } from './generationselect/generationselect.c
 import { LetterpokemonComponent } from './letterpokemon/letterpokemon.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { BarreRechercheComponent } from './barre-recherche/barre-recherche.component';
-import { LancementComponent } from './lancement/lancement.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { LancementComponent } from './lancement/lancement.component';
     TeamComponent,
     GenerationselectComponent,
     BarreRechercheComponent,
-    LancementComponent,
+
   ],
   imports: [
     HttpClientModule,
