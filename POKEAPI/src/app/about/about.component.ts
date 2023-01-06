@@ -10,7 +10,7 @@ export class AboutComponent implements OnInit {
     { nom: 'Corentin TYTECA', role: 'Saint-Mandrier la zone' },
     { nom: 'Thomas CHOQUELL', role: 'bg_du13_allezOM' },
     { nom: 'Hugo GOUIRAN', role: 'Le boss du CSS' },
-    { nom: 'Gauthier LANNURIEN', role: 'Stagiaire' }
+    { nom: 'Gauthier LANNURIEN', role: 'Smart Energy > Cybersécurité' }
   ];
 
   dateLancement = new Date(2022, 15, 12);
