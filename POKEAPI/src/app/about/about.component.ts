@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   teamMembers = [
-    { nom: 'Corentin TYTECA', role: 'bg1' },
-    { nom: 'Thomas CHOQUELL', role: 'bg2' },
+    { nom: 'Corentin TYTECA', role: 'Saint-Mandrier la zone' },
+    { nom: 'Thomas CHOQUELL', role: 'bg_du13_allezOM' },
     { nom: 'Hugo GOUIRAN', role: 'Le boss du CSS' },
-    { nom: 'Gauthier LANNURIEN', role: 'stagiaire' }
+    { nom: 'Gauthier LANNURIEN', role: 'Stagiaire' }
   ];
 
   dateLancement = new Date(2022, 15, 12);
